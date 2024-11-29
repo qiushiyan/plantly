@@ -1,7 +1,7 @@
 import { LinearGradient } from "expo-linear-gradient";
-import { Stack, useRouter } from "expo-router";
+import { SplashScreen, Stack, useRouter } from "expo-router";
 import { useAtom } from "jotai";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { View, Text, Button, StyleSheet, Platform } from "react-native";
 import { Image } from "~/components/ui/image";
 import { hasFinishedOnboardingAtom } from "~/lib/store/onboarding";
 import { theme } from "~/lib/theme";
@@ -21,7 +21,11 @@ export default function OnboardingPage() {
       style={styles.container}
     >
       <Stack.Screen options={{ headerShown: false, animation: "fade" }} />
-      <Image logo />
+      <View>
+        <Image logo />
+        <Text style={styles.heading}>Plantly</Text>
+      </View>
+
       <Button
         title="Finish onboarding"
         onPress={() => {
@@ -37,8 +41,19 @@ export default function OnboardingPage() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: "space-evenly",
     alignItems: "center",
-    justifyContent: "center",
-    fontSize: 24,
+    backgroundColor: theme.colorWhite,
+    padding: 24,
+  },
+  heading: {
+    fontSize: 36,
+    color: theme.colorWhite,
+    fontWeight: "bold",
+    textAlign: "center",
+    fontFamily: Platform.select({
+      ios: "Caveat-Regular",
+      android: "Caveat_400Regular",
+    }),
   },
 });

@@ -23,7 +23,7 @@ export default function PlantDetails() {
         waterPlant(plantId);
       }
     }
-  }, []);
+  }, [params, plantId, waterPlant]);
 
   useEffect(() => {
     navigation.setOptions({

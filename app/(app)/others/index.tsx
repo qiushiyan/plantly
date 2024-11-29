@@ -17,7 +17,7 @@ export default function App() {
           style={styles.button}
           activeOpacity={0.5}
           onPress={() => {
-            router.push("/others/counter");
+            router.navigate("/others/counter");
           }}
         >
           <Text>Counter</Text>
@@ -26,7 +26,7 @@ export default function App() {
           style={styles.button}
           activeOpacity={0.5}
           onPress={() => {
-            router.push("/others/todo");
+            router.navigate("/others/todo");
           }}
         >
           <Text>Manage todo</Text>
@@ -35,7 +35,7 @@ export default function App() {
           style={styles.button}
           activeOpacity={0.5}
           onPress={() => {
-            router.push("/others/counter/history");
+            router.navigate("/others/counter/history");
           }}
         >
           <Text>History</Text>
